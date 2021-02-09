@@ -8,7 +8,7 @@ window.Todo = {
   // Create (Crud) -- collection
   create: function(text, callback) {
     return $.ajax({
-      url: this.url,
+      url: `${this.url}`,
       type: 'POST',
       dataType: 'json',
       data: {todoText: text},

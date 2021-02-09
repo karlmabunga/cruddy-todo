@@ -125,10 +125,10 @@ describe('todos', () => {
           todos.readAll((err, todoList) => {
             expect(todoList).to.have.lengthOf(2);
             expect(todoList).to.deep.include.members(expectedTodoList, 'NOTE: Text field should use the Id initially');
-            done();
           });
         });
       });
+      done();
     });
 
   });
@@ -162,8 +162,8 @@ describe('todos', () => {
       todos.update('00001', 'updated todo', (err, todo) => {
         const counterFileContents = fs.readFileSync(counter.counterFile).toString();
         expect(counterFileContents).to.equal('00001');
-        done();
       });
+      done();
     });
 
     it('should update the todo text for existing todo', (done) => {
